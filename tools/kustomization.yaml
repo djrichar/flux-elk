@@ -4,4 +4,5 @@ namespace: elastic-system
 resources:
 - https://download.elastic.co/downloads/eck/1.0.1/all-in-one.yaml
 - elastic.yaml
+- kibana-sealed.yaml
 - kibana.yaml
