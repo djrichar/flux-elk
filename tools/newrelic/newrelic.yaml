@@ -27,4 +27,4 @@ spec:
       interval: 10m
   values:
     synthetics:
-      privateLocationKey: NRSP-us01D670440EA1EB517637D6BB0BE634325
+      privateLocationKey: NRSP-us0115841747E0D70D1A45AC38EE9A8E8A4
