@@ -26,6 +26,8 @@ spec:
       config:
         elasticsearch.requestHeadersWhitelist:
         - authorization
+  secureSettings:
+  - secretName: kibana-secret-settings
   http:
     service:
       spec:
