@@ -26,5 +26,6 @@ spec:
         namespace: newrelic
       interval: 10m
   values:
+    replicaCount: 2
     synthetics:
       privateLocationKey: NRSP-us0115841747E0D70D1A45AC38EE9A8E8A4
