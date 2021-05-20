@@ -1,13 +1,36 @@
 apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
-  name: elastic
+  name: elk-kibana
 spec:
-  version: 7.6.2
+  version: 7.12.1
   count: 1
   elasticsearchRef:
-    name: elastic
+    name: "elastic"
+  podTemplate:
+    spec:
+      containers:
+      - name: kibana
+        env:
+          - name: NODE_OPTIONS
+            value: "--max-old-space-size=1024"
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: 0.5
+          limits:
+            memory: 2.5Gi
+            cpu: 2
+      # nodeSelector:
+      #   type: frontend
+      config:
+        elasticsearch.requestHeadersWhitelist:
+        - authorization
   http:
     service:
-        spec:
-            type: LoadBalancer
+      spec:
+        type: LoadBalancer # default is ClusterIP
+    tls:
+      selfSignedCertificate:
+        subjectAltNames:
+        - dns: kibana.local
