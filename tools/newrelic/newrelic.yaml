@@ -27,7 +27,7 @@ spec:
       interval: 10m
   values:
     nodeSelector:
-      label: newrelic
+      product: newrelic
     replicaCount: 2
     synthetics:
       privateLocationKey: NRSP-us01D670440EA1EB517637D6BB0BE634325
