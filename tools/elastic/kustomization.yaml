@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: elastic-system
 resources:
 - https://download.elastic.co/downloads/eck/1.5.0/all-in-one.yaml
+- https://raw.githubusercontent.com/elastic/beats/7.12/deploy/kubernetes/metricbeat-kubernetes.yaml
 - elastic.yaml
 - kibana-sealed.yaml
 - kibana.yaml
